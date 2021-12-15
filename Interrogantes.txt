@@ -1,0 +1,8 @@
+BENEFICIOS 
+
+- A medida que el codigo crece el codigo es mas complejo por lo que es mejor usar el typado para prevenir errores
+
+TYPESCRIPT A JAVASCRIPT
+
+- no lo cambiara , por que javascript es el mas usado y es el que los navegadores reconocen , para usar typescript hay que transpilar a javascript , typescript 
+ por decirlo asi es padre de javacript, este es mejor usarlo cuando los proyectos son mas robustos

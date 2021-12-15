@@ -1,0 +1,104 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a APi for get current price of a crypto",
+    "version": "1.0.0",
+    "title": "Api Crypto Price"
+  },
+  "tags": [
+    {
+      "name": "trm",
+      "description": "Trm endpoins"
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/trm": {
+      "post": {
+        "tags": [
+          "trm"
+        ],
+        "summary": "Add a new price",
+        "description": "",
+        "operationId": "addPrice",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "id coin",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid "
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "trm"
+        ],
+        "summary": "get alls coin price",
+        "description": "",
+        "operationId": "getPrices",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Price",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Trm"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Trm"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid "
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Trm": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "int64"
+        },
+        "price": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "xml": {
+        "name": "Trm"
+      }
+    }
+  }
+}
